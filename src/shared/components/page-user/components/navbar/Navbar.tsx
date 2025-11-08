@@ -32,9 +32,9 @@ function NavbarBody(props: { hidden?: boolean }) {
 
       <Flex gap={10}>
         <NavbarLink
-          icon={<bi.Buildings />}
-          label='Заведения'
-          href='/'
+          icon={<bi.Key />}
+          label='API-Токены'
+          href={RoutingUrls.Tokens}
         />
         <NavbarLink
           icon={<bi.Person />}

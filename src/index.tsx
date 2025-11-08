@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import { RecoilRoot } from 'recoil';
 import { RoutingUrls } from 'common/const';
-import { PageAuth, PageError, PageMain, PageProfile } from 'pages';
+import { PageAuth, PageError, PageMain, PageProfile, PageTokens } from 'pages';
 import './index.scss';
 
 const router = createBrowserRouter([
@@ -17,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: RoutingUrls.Error,
     element: <PageError />,
+  },
+  {
+    path: RoutingUrls.Tokens,
+    element: <PageTokens />,
   },
   {
     path: RoutingUrls.Profile,

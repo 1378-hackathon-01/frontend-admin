@@ -1,2 +1,3 @@
+export { default as CardNoAccess } from './card-no-access/CardNoAccess';
 export { default as ScrollFiller } from './scroll-filler/ScrollFiller';
 export { default as PageUser } from './page-user/PageUser';
