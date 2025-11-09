@@ -39,6 +39,12 @@ function CardUser() {
             label='Управление API-Токенами'
             href={RoutingUrls.Tokens}
           />
+
+          <CardLink
+            icon={<bi.Buildings />}
+            label='Управление учебными заведениями'
+            href={RoutingUrls.Institutions}
+          />
         </Flex>
       </Flex>
     </Box>
