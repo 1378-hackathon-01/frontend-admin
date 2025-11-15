@@ -1,5 +1,5 @@
 import { API_DEVELOP, API_PRODUCT } from 'common/const';
-import { ApiClient } from '@1378-hackathon-01/frontend-api-client';
+import { ApiClient } from 'common/api-lib';
 import { AuthService } from 'common/services';
 
 type RequestMethod = 'get' | 'post' | 'put' | 'delete';
