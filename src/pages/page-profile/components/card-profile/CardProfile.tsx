@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import * as bi from 'react-bootstrap-icons';
-import { Box, Button, Flex, Header, Input } from 'components';
+import { Box, Button, Flex, Header, Input, Message } from 'components';
 import { atomUser } from 'common/atoms';
 import { isValidFullName, isValidPassword } from './helpers';
 import { ModalSaved } from './components';
@@ -67,6 +67,22 @@ function CardProfile() {
             <b>Логин профиля:</b> {user.login}
           </span>
         </Flex>
+
+        <Message
+          type='warning'
+          title='Ограниченный функционал'
+        >
+          <p>Обратите внимание, что функционал управления сотрудниками компании ограничен!</p>
+          <p>
+            С точки зрения архитектуры и технической реализации системы - у вас теоретически есть возможность создавать
+            других пользователей панели администратора и ограничивать им права доступа в зависимости от ваших
+            потребностей.
+          </p>
+          <p>
+            Но из-за ограниченности срока разработки платформы в пользовательский интерфейс на текущем этапе не заложены
+            формы, поля и кнопки.
+          </p>
+        </Message>
 
         <Flex direction='column'>
           <span>

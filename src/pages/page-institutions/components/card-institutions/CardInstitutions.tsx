@@ -68,7 +68,7 @@ function CardInstitutions(props: IProps) {
         {institutions != null && (
           <Flex
             direction='column'
-            gap={5}
+            gap={20}
           >
             {props.canWrite && (
               <Flex justifyContent='flex-end'>
@@ -76,24 +76,44 @@ function CardInstitutions(props: IProps) {
               </Flex>
             )}
 
-            {institutions.length === 0 && (
-              <Message
-                type='warning'
-                title='Здесь пусто!'
-              >
-                <p>В базе данных не найдено ни одного учебного заведения!</p>
-                <p>Добавьте хотя бы одно с помощью кнопки выше, чтобы начать использовать функционал сервиса.</p>
-              </Message>
-            )}
+            <Message
+              type='info'
+              title='Подсказка'
+            >
+              <p>На платформе реализовано разделение уровней доступа управления ресурсами.</p>
+              <p>
+                На уровне администратора вам доступно только базовое создание или удаление учебных заведений (при
+                условии, что у вашего пользователя есть право записи данных).
+              </p>
+              <p>
+                Более глубокое управления учебными заведениями осуществляется в отдельном{' '}
+                <a href='https://cp.studgram.ru'>веб-приложении администратора учебного заведения.</a>
+              </p>
+            </Message>
 
-            {institutions.map((x) => (
-              <CardInstitution
-                key={x.id}
-                institution={x}
-                canWrite={props.canWrite}
-                onDeleteClick={() => setModalDeleteInstitution(x)}
-              />
-            ))}
+            <Flex
+              direction='column'
+              gap={5}
+            >
+              {institutions.length === 0 && (
+                <Message
+                  type='warning'
+                  title='Здесь пусто!'
+                >
+                  <p>В базе данных не найдено ни одного учебного заведения!</p>
+                  <p>Добавьте хотя бы одно с помощью кнопки выше, чтобы начать использовать функционал сервиса.</p>
+                </Message>
+              )}
+
+              {institutions.map((x) => (
+                <CardInstitution
+                  key={x.id}
+                  institution={x}
+                  canWrite={props.canWrite}
+                  onDeleteClick={() => setModalDeleteInstitution(x)}
+                />
+              ))}
+            </Flex>
           </Flex>
         )}
       </Flex>
